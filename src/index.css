@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Linear-inspired Dark Purple Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 250 25% 6%;
+    --foreground: 250 20% 95%;
+
+    --card: 250 25% 9%;
+    --card-foreground: 250 20% 95%;
+
+    --popover: 250 25% 9%;
+    --popover-foreground: 250 20% 95%;
+
+    --primary: 265 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 250 25% 15%;
+    --secondary-foreground: 250 20% 90%;
+
+    --muted: 250 25% 15%;
+    --muted-foreground: 250 20% 55%;
+
+    --accent: 265 100% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --border: 250 25% 18%;
+    --input: 250 25% 18%;
+    --ring: 265 100% 65%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 250 25% 8%;
+    --sidebar-foreground: 250 20% 80%;
+    --sidebar-primary: 265 100% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 25% 15%;
+    --sidebar-accent-foreground: 250 20% 95%;
+    --sidebar-border: 250 25% 15%;
+    --sidebar-ring: 265 100% 65%;
+
+    /* Priority colors */
+    --priority-critical: 0 84% 60%;
+    --priority-high: 25 95% 53%;
+    --priority-medium: 45 93% 47%;
+    --priority-low: 142 76% 36%;
+
+    /* Status colors */
+    --status-todo: 250 20% 55%;
+    --status-in-progress: 265 100% 65%;
+    --status-done: 142 76% 36%;
+  }
+
+  .dark {
+    --background: 250 25% 6%;
+    --foreground: 250 20% 95%;
+
+    --card: 250 25% 9%;
+    --card-foreground: 250 20% 95%;
+
+    --popover: 250 25% 9%;
+    --popover-foreground: 250 20% 95%;
+
+    --primary: 265 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 250 25% 15%;
+    --secondary-foreground: 250 20% 90%;
+
+    --muted: 250 25% 15%;
+    --muted-foreground: 250 20% 55%;
+
+    --accent: 265 100% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 25% 18%;
+    --input: 250 25% 18%;
+    --ring: 265 100% 65%;
+
+    --sidebar-background: 250 25% 8%;
+    --sidebar-foreground: 250 20% 80%;
+    --sidebar-primary: 265 100% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 25% 15%;
+    --sidebar-accent-foreground: 250 20% 95%;
+    --sidebar-border: 250 25% 15%;
+    --sidebar-ring: 265 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(ellipse at top left, hsl(265 100% 65% / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, hsl(265 80% 50% / 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+  }
+
+  .glow {
+    box-shadow: 0 0 40px hsl(265 100% 65% / 0.15);
+  }
+
+  .priority-critical {
+    @apply bg-red-500/20 text-red-400 border-red-500/30;
+  }
+
+  .priority-high {
+    @apply bg-orange-500/20 text-orange-400 border-orange-500/30;
+  }
+
+  .priority-medium {
+    @apply bg-yellow-500/20 text-yellow-400 border-yellow-500/30;
+  }
+
+  .priority-low {
+    @apply bg-green-500/20 text-green-400 border-green-500/30;
+  }
+}
